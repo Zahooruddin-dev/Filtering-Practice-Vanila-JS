@@ -1,80 +1,22 @@
-## Filters Project
+# Products Display & Filter
 
-#### HTML Structure
+This project is a simple web application for displaying and filtering products. It allows users to search for products by name and filter them by company using dynamically generated buttons.
 
-- section.products
+## Features
 
-  - div.filters-container
-  - div.products-container
+- **Product Display**: Products are displayed in a grid format with images, names, and prices.
+- **Search Filter**: Users can search for products by typing keywords, and the product list updates in real-time.
+- **Company Filter**: Buttons are generated for each company, allowing users to filter products by their manufacturer.
+- **Responsive Design**: The layout adapts to different screen sizes, with a grid that adjusts the number of columns based on the viewport width.
 
-- .filters-container
+## Technologies Used
 
-  - form.input-form
-    - input.search-input
-  - h5(company)
-  - article.companies
-    - button.company-btn(temp values)
+- **HTML**: Structure of the application.
+- **CSS**: Styling for the application, including responsive design.
+- **JavaScript**: Handles filtering logic and dynamic DOM manipulation.
 
-- .products-container
-  - article.product
-    - img.product-img.img (src from products.js)
-    - footer
-      - h5.product-name(name)
-      - span.product-price(price)
+## How to Use
 
-#### Display Products
-
-- import products
-- make a copy and assign to new variable (use let keyword)
-- select .products-container
-- setup a function displayProducts, iterate over products, display them
-
-#### Filter Based On Text
-
-- select form, input
-- listen for 'keyup' events on form
-- get input value
-- filter based on the input value
-- call displayProducts
-
-```js
-// Text Filter
-
-const form = document.querySelector('.input-form');
-const searchInput = document.querySelector('.search-input');
-
-form.addEventListener('keyup', () => {
-  // keyup - fired when key released
-  const inputValue = searchInput.value;
-  filteredProducts = products.filter((product) => {
-    return product.title.toLowerCase().includes(inputValue);
-  });
-  displayProducts();
-});
-```
-
-#### Empty Array
-
-- displayProducts()
-- check length of filteredProducts
-- if list.length < 1
-- set productsContainer = some text
-
-#### Display Filter Buttons
-
-- select .companies
-- create function displayButtons
-- get only unique companies (set)
-- iterate over results
-- return button with data-id
-- set .companies innerHTML equal to result
-
-#### Filter Based on Company
-
-- add event listener on .companies
-- look for event.target
-- if contains .company-btn proceed
-  - if 'all' return all products (copy)
-  - else filter based on company value
-- set search value ''
-- call displayProducts
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/products-display-filter.git
